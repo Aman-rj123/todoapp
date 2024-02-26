@@ -8,6 +8,7 @@
   const {getalltodo} = require("../controllers/getalltodo");
   const {findbyid} = require("../controllers/findbyid");
   const {deletebyid} = require("../controllers/deletebyid");
+  const {updatetodo} =require("../controllers/updatetodo");
 
 
 
@@ -16,7 +17,8 @@
   router.post("/createdeTodo", createTodo);
   router.get("/getalltodo",getalltodo);
   router.get("/findbyid",findbyid);
-  router.delete("/deletebyid",deletebyid);
+  router.delete("/deletebyid?:id",deletebyid);
+  router.put("/updatetodo",updatetodo);
 
 
   module.exports= router;

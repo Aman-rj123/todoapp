@@ -1,22 +1,23 @@
-const todo= require("../models/todo");
-//const { param } = require("../routes/todo");
+ const todo= require("../models/todo");
 
-exports.deletebyid= async(req, res)=>{
+ exports.updatetodo= async(req,res)=>{
+
     try{
-        const id= req.query.id;
-        console.log(id);
-        const  response= await todo.findByIdAndDelete(id);
+        const {title, description}= req.body;
+        const id = req.body.id;
+        const response= await todo.findByIdAndUpdate(id,{title,description});
         console.log(response);
         res.status(200).json(
             {
                 succes:true,
                 data:response,
-                message:"delete succesfully"
+                message:"update  succesfully"
                 
             }
          );
 
-    }catch(err){
+    }
+    catch(err){
         console.error(err);
         console.log(err);
         res.status(500)
@@ -25,6 +26,6 @@ exports.deletebyid= async(req, res)=>{
             data:"internal server error",
             message:err.message,
         })
-
     }
+     
 }
