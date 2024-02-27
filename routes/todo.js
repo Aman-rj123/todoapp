@@ -9,6 +9,7 @@
   const {findbyid} = require("../controllers/findbyid");
   const {deletebyid} = require("../controllers/deletebyid");
   const {updatetodo} =require("../controllers/updatetodo");
+  const {newtodo}= require("../controllers/newtodo");
 
 
 
@@ -19,6 +20,7 @@
   router.get("/findbyid",findbyid);
   router.delete("/deletebyid?:id",deletebyid);
   router.put("/updatetodo",updatetodo);
+  router.post("/newtodo",newtodo);
 
 
   module.exports= router;

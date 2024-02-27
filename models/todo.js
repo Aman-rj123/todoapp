@@ -22,6 +22,15 @@ const  todoSchema= new mongoose.Schema(
             required:true,
             default:Date.now(),
 
+        },
+        age:{
+            type:Number,
+            required:true
+        },
+        email:{
+            type:String,
+            requried: true,
+            
         }
     }
 );

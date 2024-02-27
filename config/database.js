@@ -3,8 +3,8 @@ require("dotenv").config();// all data that is defined in the .env file is now p
 
  const dbconnect = () =>{
     mongoose.connect(process.env.DATABASE_URL,{
-        useNewUrlparser:true,
-        useUnifiedtopology:true,
+       // useNewUrlparser:true,  this two is not rquired in the new version of the  node.js 
+       //useUnifiedtopology:true,
     })
     .then(() => console.log("db ka connection suceesfully"))
     .catch((error) =>{
